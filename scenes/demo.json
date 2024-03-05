@@ -1,0 +1,68 @@
+{
+  "aspectRatio": {
+    "w": 16,
+    "h": 9
+  },
+  "size": 1200,
+  "threads": 16,
+  "camera": {
+    "defocusAngle": 0,
+    "focusDist": 1,
+    "vfov": 70,
+    "vup": {
+      "x": 0,
+      "y": 1,
+      "z": 0
+    },
+    "lookAt": {
+      "x": 0,
+      "y": 0,
+      "z": -1
+    },
+    "lookFrom": {
+      "x": 0,
+      "y": 0,
+      "z": 1
+    }
+  },
+  "antialiasing": {
+    "samples": 50
+  },
+  "viewport": {
+    "size": 2
+  },
+  "objects": [
+    {
+      "type": "sphere",
+      "radius": 100,
+      "center": {
+        "x": 0,
+        "y": -100.5,
+        "z": -1
+      },
+      "material": "matte",
+      "color": {
+        "r": 204,
+        "g": 213,
+        "b": 174,
+        "a": 255
+      }
+    },
+    {
+      "type": "sphere",
+      "radius": 0.5,
+      "center": {
+        "x": 0,
+        "y": 0,
+        "z": -1
+      },
+      "material": "metal",
+      "color": {
+        "r": 204,
+        "g": 204,
+        "b": 204,
+        "a": 255
+      }
+    }
+  ]
+}
