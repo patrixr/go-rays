@@ -87,7 +87,7 @@ func decodeShape(data map[string]interface{}) Shape {
 
 	if shapeType == "sphere" {
 		sphere := Sphere{}
-		utils.PanicOnError(
+		utils.Boom(
 			mapstructure.Decode(data, &sphere),
 		)
 		return &sphere
@@ -102,19 +102,19 @@ func decodeMaterial(data map[string]interface{}) Material {
 
 	if materialType == "matte" {
 		mat := MatteMaterial{}
-		utils.PanicOnError(
+		utils.Boom(
 			mapstructure.Decode(data, &mat),
 		)
 		return &mat
 	} else if materialType == "transparent" {
 		transparent := Transparent{}
-		utils.PanicOnError(
+		utils.Boom(
 			mapstructure.Decode(data, &transparent),
 		)
 		return &transparent
 	} else if materialType == "metal" {
 		metal := Metal{}
-		utils.PanicOnError(
+		utils.Boom(
 			mapstructure.Decode(data, &metal),
 		)
 		return &metal

@@ -7,7 +7,7 @@ size: 1200
 threads: 16
 
 camera:
-  defocus_angle: 0 # set to 0 for no defocus
+  defocus_angle: 0
   focus_dist: 1
   vfov: 70
   vup:
@@ -30,7 +30,7 @@ viewport:
   size: 2.0
 
 objects:
-  # # Ground
+  # Ground
   - type: "sphere"
     radius: 100
     center: { "x": 0, "y": -100.5, "z": -1 }
@@ -43,52 +43,3 @@ objects:
     center: { "x": 0, "y": 0, "z": -1 }
     material: "metal"
     color: { "r": 204, "g": 204, "b": 204, "a": 255 }
-#
-#  # Other sphere
-#  - type: "sphere"
-#    radius: 0.2
-#    center: { "x": 0.9, "y": -0.3, "z": 0 }
-#    material: "metal"
-#    color: { "r": 180, "g": 180, "b": 200, "a": 255 }
-#  - type: "sphere"
-#    radius: 0.1
-#    center: { "x": 0.3, "y": -0.4, "z": 0.3 }
-#    material: "matte"
-#    color: { "r": 212, "g": 163, "b": 115, "a": 255 }
-#  - type: "sphere"
-#    radius: 0.1
-#    center: { "x": -0.5, "y": -0.4, "z": -0.2 }
-#    material: "metal"
-#    color: { "r": 200, "g": 40, "b": 40, "a": 255 }
-#  - type: "sphere"
-#    radius: 0.1
-#    center: { "x": 0, "y": -0.4, "z": 0.2 }
-#    material: "matte"
-#    color: { "r": 212, "g": 163, "b": 115, "a": 255 }
-#  - type: "sphere"
-#    radius: 0.1
-#    center: { "x": -0.8, "y": -0.4, "z": -0.9 }
-#    material: "matte"
-#    color: { "r": 212, "g": 163, "b": 115, "a": 255 }
-#  - type: "sphere"
-#    radius: 0.1
-#    center: { "x": -0.7, "y": -0.4, "z": -0 }
-#    material: "matte"
-#    color: { "r": 212, "g": 163, "b": 115, "a": 255 }
-#
-
-  # Right sphere
-#  - type: "sphere"
-#    radius: 0.5
-#    center: { "x": 1, "y": 0, "z": -1 }
-#    material: "transparent"
-#    refraction: 1.5
-#    color: { "r": 255, "g": 255, "b": 255, "a": 255 }
-#  - type: "sphere"
-#    radius: -0.4
-#    center: { "x": 1, "y": 0, "z": -1 }
-#    material: "transparent"
-#    refraction: 1.5
-#    color: { "r": 255, "g": 255, "b": 255, "a": 255 }
-
-    #color: { "r": 204, "g": 153, "b": 51, "a": 255} 

@@ -18,7 +18,7 @@ func InitRaytracerFromScene(path string) Raytracer {
 
 	data, err := os.ReadFile(path)
 
-	utils.PanicOnError(err)
+	utils.Boom(err)
 
 	// check if json or yaml file
 	ext := filepath.Ext(path)
@@ -29,10 +29,10 @@ func InitRaytracerFromScene(path string) Raytracer {
 	case ".json":
 		err = json.Unmarshal(data, &rt)
 	default:
-		utils.PanicOnError(errors.New("Invalid file format: " + ext))
+		utils.Boom(errors.New("Invalid file format: " + ext))
 	}
 
-	utils.PanicOnError(err)
+	utils.Boom(err)
 
 	return rt
 }
@@ -41,7 +41,7 @@ func InitRaytracerFromJSON(data []byte) Raytracer {
 	var rt Raytracer
 
 	err := json.Unmarshal(data, &rt)
-	utils.PanicOnError(err)
+	utils.Boom(err)
 
 	return rt
 }

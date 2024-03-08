@@ -16,16 +16,18 @@ func ExportImage(image image.Image, path string) {
 		Log.Fatal("Unsupported file format " + ext)
 	}
 
+	os.MkdirAll(filepath.Dir(path), os.ModePerm)
+
 	file, err := os.Create(path)
 
-	PanicOnError(err)
+	Boom(err)
 
 	defer file.Close()
 
 	if ext == ".png" {
-		PanicOnError(png.Encode(file, image))
+		Boom(png.Encode(file, image))
 	} else {
-		PanicOnError(jpeg.Encode(file, image, nil))
+		Boom(jpeg.Encode(file, image, nil))
 	}
 
 	Log.Info("Image exported to " + path)

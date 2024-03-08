@@ -1,3 +1,5 @@
 *.wasm
 dist/
 .DS_Store
+./*.png
+./*.jpeg

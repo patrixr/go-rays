@@ -11,7 +11,7 @@ func CreateRange(min float64, max float64) Range {
 	return Range{Min: min, Max: max}
 }
 
-func PanicOnError(err error) {
+func Boom(err error) {
 	if err != nil {
 		panic(err)
 	}

@@ -57,7 +57,7 @@ func ScheduleRender(this js.Value, inputs []js.Value) interface{} {
 	rt := core.InitRaytracer()
 
 	// Convert the map to a RaytracerConfig
-	utils.PanicOnError(mapstructure.Decode(configMap, &rt))
+	utils.Boom(mapstructure.Decode(configMap, &rt))
 
 	jobId++
 	id := jobId
