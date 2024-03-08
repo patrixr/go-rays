@@ -60,6 +60,12 @@ func InitRaytracer() *Raytracer {
 			DefocusAngle: 0,
 			VFOV:         70,
 		},
+		Background: colors.Color{
+			R: 127,
+			G: 178,
+			B: 255,
+			A: 255,
+		},
 		World: World{
 			Objects: []Object{
 				{

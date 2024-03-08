@@ -19,11 +19,12 @@ type Antialiasing struct {
 }
 
 type Raytracer struct {
-	Size     int      `yaml:"size" json:"size"`
-	Viewport Viewport `yaml:"viewport" json:"viewport"`
-	Camera   Camera   `yaml:"camera" json:"camera"`
-	World    World    `yaml:"objects" json:"objects"`
-	Threads  int      `yaml:"threads" json:"threads"`
+	Size       int          `yaml:"size" json:"size"`
+	Viewport   Viewport     `yaml:"viewport" json:"viewport"`
+	Camera     Camera       `yaml:"camera" json:"camera"`
+	World      World        `yaml:"objects" json:"objects"`
+	Threads    int          `yaml:"threads" json:"threads"`
+	Background colors.Color `yaml:"background" json:"background"`
 
 	Aspect AspectRatio `yaml:"aspect_ratio" json:"aspectRatio"`
 
@@ -181,13 +182,7 @@ func (rt *Raytracer) RayColor(ray Ray, maxDepth int) colors.Color {
 func (rt *Raytracer) defaultRayColor(ray Ray) colors.Color {
 	unitDirection := ray.Direction.Normalize()
 	t := 0.5 * (unitDirection.Y + 1.0)
-
-	return colors.Color{
-		uint8(255.0 * ((1.0 - t) + (t * 0.5))),
-		uint8(255.0 * ((1.0 - t) + (t * 0.7))),
-		uint8(255.0 * ((1.0 - t) + (t * 1.0))),
-		255,
-	}
+	return colors.White().Lerp(rt.Background, t)
 }
 
 // -----------------------------------------

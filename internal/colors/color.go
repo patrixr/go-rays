@@ -71,6 +71,17 @@ func (c Color) WithGammaCorrection() Color {
 
 // ---------------------------------------------------
 
+func (c Color) Lerp(other Color, t float64) Color {
+	return Color{
+		R: uint8(float64(c.R)*(1-t) + float64(other.R)*t),
+		G: uint8(float64(c.G)*(1-t) + float64(other.G)*t),
+		B: uint8(float64(c.B)*(1-t) + float64(other.B)*t),
+		A: uint8(float64(c.A)*(1-t) + float64(other.A)*t),
+	}
+}
+
+// ---------------------------------------------------
+
 func (c Color) RGBA() (r, g, b, a uint32) {
 	r = uint32(c.R)
 	r |= r << 8
