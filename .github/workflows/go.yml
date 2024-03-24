@@ -28,7 +28,7 @@ jobs:
         with:
           draft: false
           prerelease: false
-          release_name: latest
+          release_name: ${{ github.ref }}
           tag_name: ${{ github.ref }}
           body: Incremental change
         env:
