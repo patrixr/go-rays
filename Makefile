@@ -1,4 +1,4 @@
-.PHONY: tidy run build
+.PHONY: tidy run build tag wasm
 
 version := $(shell cat VERSION)
 
@@ -20,5 +20,5 @@ wasm:
 build: wasm
 
 tag:
-    git tag -a v$(version) -m "Release v$(version)"
-    git push origin v$(version)
+	git tag -a v$(version) -m "Release v$(version)"
+	git push origin v$(version)
